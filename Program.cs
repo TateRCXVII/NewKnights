@@ -16,6 +16,7 @@ namespace KnightsOfNalleywey
         {
             Game newGame = new Game();
             newGame.StartGame();
+
            
         }
     }
