@@ -15,6 +15,7 @@ namespace KnightsOfNalleywey
         static void Main(string[] args)
         {
             Game newGame = new Game();
+            newGame.TitlePage();
             newGame.StartGame();
 
            

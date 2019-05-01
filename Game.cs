@@ -6,6 +6,34 @@ namespace KnightsOfNalleywey
         //Character's name
         private string characterName;
         private const ConsoleColor CHAR_COLOR = ConsoleColor.DarkMagenta;
+        private const string TITLE = @"
+ ██ ▄█▀███▄    █ ██▓ ▄████ ██░ ██▄▄▄█████▓ ██████                   
+ ██▄█▒ ██ ▀█   █▓██▒██▒ ▀█▓██░ ██▓  ██▒ ▓▒██    ▒                   
+▓███▄░▓██  ▀█ ██▒██▒██░▄▄▄▒██▀▀██▒ ▓██░ ▒░ ▓██▄                     
+▓██ █▄▓██▒  ▐▌██░██░▓█  ██░▓█ ░██░ ▓██▓ ░  ▒   ██▒                  
+▒██▒ █▒██░   ▓██░██░▒▓███▀░▓█▒░██▓ ▒██▒ ░▒██████▒▒                  
+▒ ▒▒ ▓░ ▒░   ▒ ▒░▓  ░▒   ▒ ▒ ░░▒░▒ ▒ ░░  ▒ ▒▓▒ ▒ ░                  
+░ ░▒ ▒░ ░░   ░ ▒░▒ ░ ░   ░ ▒ ░▒░ ░   ░   ░ ░▒  ░ ░                  
+░ ░░ ░   ░   ░ ░ ▒ ░ ░   ░ ░  ░░ ░ ░     ░  ░  ░                    
+░▒█████   █████▒ ░       ░ ░  ░  ░             ░                    
+▒██▒  ██▓██   ▒                                                     
+▒██░  ██▒████ ░                                                     
+▒██   ██░▓█▒  ░                                                     
+░ ████▓▒░▒█░                                                        
+░ ▒░▒░▒░ ▒ ░                                                        
+  ░ ▒ ▒░ ░                                                          
+░ ░ ░ ▒  ░ ░                                                        
+ ███▄ ░  █ ▄▄▄      ██▓    ██▓   ▓████▓██   ██▓█     █▓████▓██   ██▓
+ ██ ▀█   █▒████▄   ▓██▒   ▓██▒   ▓█   ▀▒██  ██▓█░ █ ░█▓█   ▀▒██  ██▒
+▓██  ▀█ ██▒██  ▀█▄ ▒██░   ▒██░   ▒███   ▒██ ██▒█░ █ ░█▒███   ▒██ ██░
+▓██▒  ▐▌██░██▄▄▄▄██▒██░   ▒██░   ▒▓█  ▄ ░ ▐██▓░█░ █ ░█▒▓█  ▄ ░ ▐██▓░
+▒██░   ▓██░▓█   ▓██░██████░██████░▒████▒░ ██▒▓░░██▒██▓░▒████▒░ ██▒▓░
+░ ▒░   ▒ ▒ ▒▒   ▓▒█░ ▒░▓  ░ ▒░▓  ░░ ▒░ ░ ██▒▒▒░ ▓░▒ ▒ ░░ ▒░ ░ ██▒▒▒ 
+░ ░░   ░ ▒░ ▒   ▒▒ ░ ░ ▒  ░ ░ ▒  ░░ ░  ▓██ ░▒░  ▒ ░ ░  ░ ░  ▓██ ░▒░ 
+   ░   ░ ░  ░   ▒    ░ ░    ░ ░     ░  ▒ ▒ ░░   ░   ░    ░  ▒ ▒ ░░  
+         ░      ░  ░   ░  ░   ░  ░  ░  ░ ░        ░      ░  ░ ░     
+                                       ░ ░                  ░ ░     
+";
 
 
         public Game()
@@ -28,12 +56,24 @@ namespace KnightsOfNalleywey
             SetCharacterName(Console.ReadLine());
             Console.ResetColor();
         }
+
+        public void TitlePage()
+        {
+            Console.Clear();
+            Dialogue(TITLE, ConsoleColor.DarkRed);
+            Dialogue("\n \n \nPress enter to start.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
         //Game start text sequence
         public void StartGame()
         {
             Console.Title = "The Knights of Nalleywey";
             Console.WriteLine("The Knights Of Nallywey");
-            Console.WriteLine("\nDeep in the Middlowground Forest sits a four-eyed warlock \nthat has the power to turn lead into gold...\n");
+            Console.WriteLine("\nDeep in the Middlowground Forest sits a four-eyed warlock \nthat has the power to turn lead into gold...\n Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
             this.AskName();
             Dialogue($"Good day Sir ", ConsoleColor.DarkCyan);
             UserDialogue(this.characterName);
