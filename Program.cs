@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * --The Knights of Nalleywey--
+ * By Tate Reynolds, 04/27/2019
+ * 
+ * 
+ * Explore the world of Nalleywey as an honorable night!
+ */
+
+using System;
 
 namespace KnightsOfNalleywey
 {
@@ -6,14 +14,9 @@ namespace KnightsOfNalleywey
     {
         static void Main(string[] args)
         {
-            string CharacterName;
-
-            Console.WriteLine("The Knights Of Nallywey");
-            Console.WriteLine("\nDeep in the Middlowground Forest sits a four-eyed warlock \nthat has the power to turn lead into gold...\n");
-            Console.WriteLine("Enter your knight's name: ");
-            CharacterName = Console.ReadLine();
-            Console.WriteLine($"Good day Sir {CharacterName}! I'm Sage Kashmir. Pleased to meet you, friend!");
-            Console.ReadKey();
+            Game newGame = new Game();
+            newGame.StartGame();
+           
         }
     }
 }
